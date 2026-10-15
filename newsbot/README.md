@@ -10,7 +10,16 @@ https://n.news.naver.com/mnews/article/...
 (×10)
 ```
 
-## 사용
+## 사용 (API 키 없이 Playwright로)
+```bash
+pip install playwright && playwright install chromium
+python -m newsbot --source playwright --out news.txt   # 키가 없으면 auto 가 자동 선택
+python -m newsbot --source playwright --headed          # 창을 띄워 디버깅
+```
+검색 화면(최신순·1일)을 읽으므로 네이버 화면 구조가 바뀌면 `newsbot/browser.py`의 `JS_EXTRACT`를 고쳐야 한다.
+이 저장소의 클라우드 샌드박스는 naver.com 접속이 막혀 있어 **실제 PC에서 한 번 실행해 확인**이 필요하다.
+
+## 사용 (API)
 ```bash
 pip install -r requirements.txt
 export NAVER_CLIENT_ID=... NAVER_CLIENT_SECRET=...
